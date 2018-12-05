@@ -1,4 +1,4 @@
-FROM diuis/docker-emsdk-installed-python3:v1.0.2
+FROM diuis/docker-emsdk-installed-python2:v1.0.3
 
 USER root
 RUN apt-get update && apt-get install --no-install-recommends -y unzip && \
