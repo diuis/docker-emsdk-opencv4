@@ -1,7 +1,9 @@
-FROM diuis/docker-emsdk
+FROM diuis/docker-emsdk-installed-python3:v1.0.1
 
 USER root
-RUN apt-get update && apt-get install -y unzip
+RUN apt-get update && apt-get install --no-install-recommends -y unzip && \
+    apt-get autoremove && apt-get clean
+
 RUN mkdir /opencv && chown appuser /opencv
 
 USER appuser
